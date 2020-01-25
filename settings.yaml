@@ -1,0 +1,53 @@
+---
+default:
+  ALLOWED_HOSTS:
+    - ::1
+    - 127.0.0.1
+    - localhost
+    - test.com
+    - ara.coldnorthadmin.com
+  BASE_DIR: /root/.ara
+  CORS_ORIGIN_ALLOW_ALL: false
+  CORS_ORIGIN_REGEX_WHITELIST:
+  CORS_ORIGIN_WHITELIST:
+    - http://127.0.0.1:8000
+    - http://localhost:3000
+  DATABASE_CONN_MAX_AGE: 0
+  DATABASE_ENGINE: django.db.backends.postgresql
+  DATABASE_HOST: ara-postgres
+  DATABASE_NAME: ara
+  DATABASE_PASSWORD: password123
+  DATABASE_PORT: 5432
+  DATABASE_USER: ara_user
+  DEBUG: true
+  DISTRIBUTED_SQLITE: false
+  DISTRIBUTED_SQLITE_PREFIX: ara-report
+  DISTRIBUTED_SQLITE_ROOT: /var/www/logs
+  LOGGING:
+    disable_existing_loggers: false
+    formatters:
+      normal:
+        format: "%(asctime)s %(levelname)s %(name)s: %(message)s"
+    handlers:
+      console:
+        class: logging.StreamHandler
+        formatter: normal
+        level: INFO
+        stream: ext://sys.stdout
+    loggers:
+      ara:
+        handlers:
+          - console
+        level: INFO
+        propagate: 0
+    root:
+      handlers:
+        - console
+      level: INFO
+    version: 1
+  LOG_LEVEL: DEBUG
+  PAGE_SIZE: 100
+  READ_LOGIN_REQUIRED: false
+  SECRET_KEY: BCrx1QWPpnQQFhxJ2EJVP6n0Xm7CQ1uGAYT0gQo0fmqeDgxBbB
+  TIME_ZONE: America/Toronto
+  WRITE_LOGIN_REQUIRED: false
